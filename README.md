@@ -14,9 +14,15 @@ It provides:
 From a sibling repo under `~/making`:
 
 ```racket
-(require "../style/main.rkt")
+(require style/main)
 
 css-text
+```
+
+Install locally while developing:
+
+```bash
+raco pkg install --auto --link .
 ```
 
 ## Plain CSS
