@@ -8,6 +8,7 @@ It provides:
 - the current Mayphus font stacks
 - compact landing/header/card/list classes
 - a Racket module that exports the same stylesheet as `css-text`
+- `define-styles` and `styles->css` for small project-specific style modules
 
 ## Racket
 
@@ -32,6 +33,34 @@ Generate a CSS file for any project:
 ```bash
 racket main.rkt > mayphus.css
 ```
+
+## Style DSL
+
+The stylesheet is written in a small Racket DSL inside `main.rkt`:
+
+```racket
+(define-styles css-rules
+  (style
+    (rule ":root"
+      [color-scheme light dark]
+      (tokens
+       [bg "#ffffff"]
+       [fg "#191613"]))
+    (class shell
+      [max-width 64rem]
+      [background (var bg)])
+    (dark
+      (rule ":root"
+        (tokens
+         [bg "#11100f"]
+         [fg "#f2ece5"])))
+    (media "(max-width:640px)"
+      (class shell
+        [padding "1.2rem 1rem 3rem"]))))
+```
+
+`class` emits `.mf-*` selectors, `tokens` emits CSS custom properties, and
+`(var name)` emits `var(--name)`.
 
 ## Class Surface
 
