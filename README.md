@@ -1,5 +1,7 @@
 # Mayphus Style
 
+> **Status:** Shared component — the small common visual layer used across Mayphus web projects.
+
 Small shared style surface for Mayphus web projects.
 
 It provides:
