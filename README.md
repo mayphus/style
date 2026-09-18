@@ -1,3 +1,7 @@
+> **Archived after consolidation — 18 September 2026.** Maintenance and original Git history now live in [mayphus](https://github.com/mayphus/mayphus). The successor source repository is private. This repository is retained as a historical reference; use the successor for new work.
+
+---
+
 # Mayphus Style
 
 > **Status:** Shared component — the small common visual layer used across Mayphus web projects.
